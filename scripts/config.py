@@ -39,7 +39,7 @@ RESEND_TIMEOUT = 15            # Shorter timeout - emails are quick
 RESEND_MAX_RETRIES = 3         # Retry on network failures
 
 # Email Configuration
-DEFAULT_FROM_ADDRESS = "onboarding@resend.dev"  # Free tier sender (no domain needed)
+DEFAULT_FROM_ADDRESS = "Cassandra <onboarding@resend.dev>"  # Free tier sender (no domain needed)
 
 # Readwise Integration
 ENABLE_READWISE_SYNC = True    # Automatically sync saved items to Readwise Reader
