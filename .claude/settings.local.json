@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(RESEND_API_KEY=re_LnYGdFYH_BAGJjNnaWQGY6978WxXW5iKz python3:*)"
+    ]
+  }
+}

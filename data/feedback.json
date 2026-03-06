@@ -1,0 +1,122 @@
+[
+  {
+    "date": "2026-02-18",
+    "item_id": "3d51a1454368",
+    "source": "Arts & Letters Daily",
+    "title": "The film critic A.S. Hamrah has no use for plot description",
+    "rating": "up",
+    "clicked": true
+  },
+  {
+    "date": "2026-02-18",
+    "item_id": "4d83ba675026",
+    "source": "Arts & Letters Daily",
+    "title": "Toni Morrison once said she finds herself being more and more difficult",
+    "rating": "up",
+    "clicked": false
+  },
+  {
+    "date": "2026-02-18",
+    "item_id": "370d5f010ead",
+    "source": "Arts & Letters Daily",
+    "title": "In the Victorian era, discoveries upended humanity's place",
+    "rating": "save",
+    "clicked": true
+  },
+  {
+    "date": "2026-02-17",
+    "item_id": "be8079adbd66",
+    "source": "Arts & Letters Daily",
+    "title": "Confessions of a midlist writer",
+    "rating": "up",
+    "clicked": true
+  },
+  {
+    "date": "2026-02-17",
+    "item_id": "ba078b379f82",
+    "source": "NYT Books",
+    "title": "Fania F\u00e9nelon, 74; Memoirs Described Auschwitz Singing",
+    "rating": "down",
+    "clicked": false
+  },
+  {
+    "date": "2026-02-16",
+    "item_id": "abc123",
+    "source": "LARB",
+    "title": "Sample article from LARB",
+    "rating": "up",
+    "clicked": true
+  },
+  {
+    "date": "2026-02-16",
+    "item_id": "def456",
+    "source": "LARB",
+    "title": "Another LARB piece",
+    "rating": "up",
+    "clicked": false
+  },
+  {
+    "date": "2026-02-15",
+    "item_id": "ghi789",
+    "source": "Arts & Letters Daily",
+    "title": "Weekend reading",
+    "rating": "save",
+    "clicked": true
+  },
+  {
+    "date": "2026-02-18",
+    "item_id": "test_abc123",
+    "source": "Test Source",
+    "title": "Test Article 1",
+    "rating": "up",
+    "clicked": true
+  },
+  {
+    "date": "2026-02-18",
+    "item_id": "test_def456",
+    "source": "Test Source 2",
+    "title": "Test Article 2",
+    "rating": "save",
+    "clicked": false
+  },
+  {
+    "date": "2026-02-19",
+    "item_id": "febeea1e572b",
+    "source": "The Atlantic Culture",
+    "title": "The Ghosts of Toni Morrison",
+    "rating": "up",
+    "clicked": true
+  },
+  {
+    "date": "2026-02-19",
+    "item_id": "c8c024711ad3",
+    "source": "Granta",
+    "title": "Issey Miyake",
+    "rating": "save",
+    "clicked": true
+  },
+  {
+    "date": "2026-02-19",
+    "item_id": "af22b6bf891d",
+    "source": "Paris Review",
+    "title": "Reading at Random with Virginia Woolf",
+    "rating": "up",
+    "clicked": false
+  },
+  {
+    "date": "2026-02-19",
+    "item_id": "05d03343b6b4",
+    "source": "The Guardian Books",
+    "title": "The Disappearing Act by Maria Stepanova review \u2013 a poetic exploration of Russian guilt",
+    "rating": "up",
+    "clicked": true
+  },
+  {
+    "date": "2026-02-19",
+    "item_id": "8ea70f6e786f",
+    "source": "NPR Books",
+    "title": "A photojournalist details her rebellion against the Syrian regime -- and her father",
+    "rating": "up",
+    "clicked": true
+  }
+]

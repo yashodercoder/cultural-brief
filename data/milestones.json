@@ -1,0 +1,40 @@
+{
+  "last_updated": "2026-02-19",
+  "achieved": [
+    {
+      "date": "2026-02-18",
+      "key": "daily_3",
+      "label": "\ud83c\udfaf 3 ratings today"
+    },
+    {
+      "date": "2026-02-18",
+      "key": "daily_5",
+      "label": "\ud83c\udfaf 5 ratings today"
+    },
+    {
+      "date": "2026-02-18",
+      "key": "daily_clicks_3",
+      "label": "\u2b50 3 clicks today"
+    },
+    {
+      "date": "2026-02-19",
+      "key": "daily_5",
+      "label": "\ud83c\udfaf 5 ratings today"
+    },
+    {
+      "date": "2026-02-19",
+      "key": "daily_3",
+      "label": "\ud83c\udfaf 3 ratings today"
+    },
+    {
+      "date": "2026-02-19",
+      "key": "daily_clicks_3",
+      "label": "\u2b50 3 clicks today"
+    },
+    {
+      "date": "2026-02-16",
+      "key": "weekly_10",
+      "label": "\ud83c\udfaf 10 ratings this week"
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+rss:
+  # Prestige Literary Magazines (LARB/LRB-adjacent)
+  - name: Arts & Letters Daily
+    url: https://www.aldaily.com/feed/
+
+  - name: Paris Review
+    url: https://www.theparisreview.org/blog/feed/
+
+  - name: n+1
+    url: https://www.nplusonemag.com/feed/
+
+  - name: The Baffler
+    url: https://thebaffler.com/feed
+
+  - name: The Point Magazine
+    url: https://thepointmag.com/feed/
+
+  - name: Granta
+    url: https://granta.com/feed/
+
+  - name: Guernica
+    url: https://www.guernicamag.com/feed/
+
+  # Literary Culture & Criticism
+  - name: Electric Literature
+    url: https://electricliterature.com/feed/
+
+  - name: LitHub
+    url: https://lithub.com/feed/
+
+  - name: The Millions
+    url: https://themillions.com/feed
+
+  - name: Book Riot
+    url: https://bookriot.com/feed/
+
+  # Long-form Essays & Features
+  - name: Longreads
+    url: https://longreads.com/feed/
+
+  - name: The Walrus
+    url: https://thewalrus.ca/feed/
+
+  # Mainstream Quality (High/Low Culture)
+  - name: The New Yorker
+    url: https://www.newyorker.com/feed/everything
+
+  - name: The Atlantic Culture
+    url: https://www.theatlantic.com/feed/channel/culture/
+
+  - name: NYT Books
+    url: https://rss.nytimes.com/services/xml/rss/nyt/Books.xml
+
+  - name: The Guardian Books
+    url: https://www.theguardian.com/books/rss
+
+  - name: NPR Books
+    url: https://feeds.npr.org/1032/rss.xml
+
+  - name: Vox Culture
+    url: https://www.vox.com/rss/culture/index.xml
+
+  # Film & TV Criticism (literary/atmospheric, not plot recaps)
+  - name: Film Comment
+    url: https://www.filmcomment.com/feed/
+
+  - name: Filmmaker Magazine
+    url: https://filmmakermagazine.com/feed/
+
+  - name: IndieWire
+    url: https://www.indiewire.com/feed/
+
+  - name: A.V. Club
+    url: https://www.avclub.com/rss
+
+  - name: Polygon
+    url: https://www.polygon.com/rss/index.xml
+
+  # Substacks (may be inactive - free posts only; paid posts excluded from RSS)
+  - name: Jasmine Sun
+    url: https://jasminesun.substack.com/feed
+
+  - name: Celine Nguyen
+    url: https://celinenguyen.substack.com/feed
+
+  # International Literary & Culture
+  - name: London Review of Books
+    url: https://www.lrb.co.uk/feeds/lrb
+
+  - name: Times Literary Supplement
+    url: https://www.the-tls.co.uk/feed/
+
+  - name: The Dublin Review
+    url: https://thedublinreview.com/feed/
+
+  - name: The White Review
+    url: https://www.thewhitereview.org/feed/
+
+  - name: 3:AM Magazine
+    url: https://www.3ammagazine.com/3am/feed/
+
+  # Academic & Intellectual
+  - name: Public Books
+    url: https://www.publicbooks.org/feed/
+
+  - name: Boston Review
+    url: https://www.bostonreview.net/feed/
+
+  - name: Aeon
+    url: https://aeon.co/feed.rss
+
+  - name: The New Inquiry
+    url: https://thenewinquiry.com/feed/
+
+  - name: Lapham's Quarterly
+    url: https://www.laphamsquarterly.org/feed
+
+  - name: Cabinet Magazine
+    url: https://www.cabinetmagazine.org/feed/
+
+  # More Literary Magazines
+  - name: The Believer
+    url: https://believermag.com/feed/
+
+  - name: Bookforum
+    url: https://www.bookforum.com/feed/
+
+  - name: The Threepenny Review
+    url: https://www.threepennyreview.com/feed/
+
+  - name: Tin House
+    url: https://tinhouse.com/feed/
+
+  - name: McSweeney's
+    url: https://www.mcsweeneys.net/feeds/rss
+
+  - name: The Rumpus
+    url: https://therumpus.net/feed/
+
+  - name: Catapult
+    url: https://catapult.co/feed
+
+  # Essay Platforms & Longform
+  - name: Real Life
+    url: https://reallifemag.com/feed/
+
+  - name: The Drift
+    url: https://www.thedriftmag.com/feed/
+
+  - name: Harper's Magazine
+    url: https://harpers.org/feed/
+
+  - name: Hazlitt
+    url: https://hazlitt.net/feed
+
+  - name: The Smart Set
+    url: https://www.thesmartset.com/feed/
+
+  # More Film & TV Criticism
+  - name: Reverse Shot
+    url: https://www.reverseshot.org/feed
+
+  - name: Bright Wall/Dark Room
+    url: https://www.brightwalldarkroom.com/feed/
+
+  - name: Film School Rejects
+    url: https://filmschoolrejects.com/feed/
+
+  - name: Slant Magazine
+    url: https://www.slantmagazine.com/feed/
+
+  - name: Little White Lies
+    url: https://lwlies.com/feed/
+
+  - name: Vulture
+    url: https://www.vulture.com/feed/
+
+  - name: The Ringer Culture
+    url: https://www.theringer.com/rss/index.xml
+
+  # Art & Visual Culture
+  - name: Hyperallergic
+    url: https://hyperallergic.com/feed/
+
+  - name: Frieze
+    url: https://www.frieze.com/rss.xml
+
+  - name: Artforum
+    url: https://www.artforum.com/feed/
+
+  # Music Criticism (literary/essayistic)
+  - name: Pitchfork
+    url: https://pitchfork.com/rss/reviews/albums/
+
+  - name: The Quietus
+    url: https://thequietus.com/feed
+
+  # Quality Newsletters (Active Writers)
+  # Note: Substack feeds deliver free posts only; paid posts are excluded or truncated.
+  # Patreon feeds require a subscriber token — no public free-posts RSS available.
+  - name: Anne Helen Petersen
+    url: https://annehelen.substack.com/feed
+    # Migrating to Patreon (patreon.com/cw/CultureStudy); Substack feed active for now.
+    # Patreon does not offer a public free-posts RSS — subscriber token required for full access.
+
+  - name: Clancy Martin
+    url: https://clancymartin.substack.com/feed
+
+  - name: Alissa Wilkinson
+    url: https://alissawilkinson.substack.com/feed
+
+  - name: Lincoln Michel
+    url: https://counter-craft.com/feed
+
+  - name: Molly Fischer
+    url: https://mollyfischer.substack.com/feed
+
+  - name: Sarah Weinman
+    url: https://buttondown.com/thecrimelady/rss
+
+  - name: Morgan Leigh Davies
+    url: https://buttondown.com/mldavies/rss
+
+  - name: Mo Ryan
+    url: https://www.moryan.com/rss/
+
+  # Note: Some feeds may be inactive or broken. Regular source discovery
+  # will identify working alternatives and remove dead sources.

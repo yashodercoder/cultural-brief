@@ -1,0 +1,57 @@
+name: Cultural Brief
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # 6:00 AM UTC daily
+  workflow_dispatch:        # allow manual runs
+
+permissions:
+  contents: write           # needed to commit brief files back
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch RSS sources
+        run: python3 scripts/fetch.py
+
+      - name: Filter with Claude Haiku
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 scripts/filter.py
+
+      - name: Commit brief
+        run: |
+          git config user.name "cultural-brief[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/briefs/
+          git diff --staged --quiet || git commit -m "chore: brief $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Deliver email
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          BRIEF_TO: ${{ secrets.BRIEF_TO }}
+          BRIEF_FROM: ${{ secrets.BRIEF_FROM }}
+          RATING_SERVER_URL: ${{ secrets.RATING_SERVER_URL }}
+          READWISE_API_TOKEN: ${{ secrets.READWISE_API_TOKEN }}
+        run: python3 scripts/deliver.py
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          BRIEF_TO: ${{ secrets.BRIEF_TO }}
+          BRIEF_FROM: ${{ secrets.BRIEF_FROM }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 scripts/notify_failure.py "workflow" "One or more steps failed. Check the Actions log for details."
