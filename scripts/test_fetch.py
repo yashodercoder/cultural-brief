@@ -15,32 +15,38 @@ import feedparser
 sys.path.insert(0, str(Path(__file__).parent))
 import fetch
 
-MOCK_FEED = textwrap.dedent("""\
-    <?xml version="1.0" encoding="UTF-8"?>
-    <rss version="2.0">
-      <channel>
-        <title>Mock Literary Feed</title>
-        <item>
-          <title>The Slow Burn of Elena Ferrante's Latest</title>
-          <link>https://example.com/ferrante-review</link>
-          <description>A deep look at interiority and domestic life in Ferrante's new novel.</description>
-          <pubDate>Wed, 18 Feb 2026 08:00:00 +0000</pubDate>
-        </item>
-        <item>
-          <title>27 Books to Read Before You Die</title>
-          <link>https://example.com/listicle</link>
-          <description>A listicle of must-read books.</description>
-          <pubDate>Wed, 18 Feb 2026 07:00:00 +0000</pubDate>
-        </item>
-        <item>
-          <title>Old Item From Last Week</title>
-          <link>https://example.com/old-item</link>
-          <description>This should be filtered out by the 24h cutoff.</description>
-          <pubDate>Mon, 10 Feb 2026 08:00:00 +0000</pubDate>
-        </item>
-      </channel>
-    </rss>
-""")
+def _make_mock_feed():
+    from datetime import datetime, timezone, timedelta
+    now = datetime.now(timezone.utc)
+    recent1 = (now - timedelta(hours=2)).strftime("%a, %d %b %Y %H:%M:%S +0000")
+    recent2 = (now - timedelta(hours=4)).strftime("%a, %d %b %Y %H:%M:%S +0000")
+    old = (now - timedelta(days=8)).strftime("%a, %d %b %Y %H:%M:%S +0000")
+    return textwrap.dedent(f"""\
+        <?xml version="1.0" encoding="UTF-8"?>
+        <rss version="2.0">
+          <channel>
+            <title>Mock Literary Feed</title>
+            <item>
+              <title>The Slow Burn of Elena Ferrante's Latest</title>
+              <link>https://example.com/ferrante-review</link>
+              <description>A deep look at interiority and domestic life in Ferrante's new novel.</description>
+              <pubDate>{recent1}</pubDate>
+            </item>
+            <item>
+              <title>27 Books to Read Before You Die</title>
+              <link>https://example.com/listicle</link>
+              <description>A listicle of must-read books.</description>
+              <pubDate>{recent2}</pubDate>
+            </item>
+            <item>
+              <title>Old Item From Last Week</title>
+              <link>https://example.com/old-item</link>
+              <description>This should be filtered out by the 24h cutoff.</description>
+              <pubDate>{old}</pubDate>
+            </item>
+          </channel>
+        </rss>
+    """)
 
 
 def test_parsing():
@@ -49,7 +55,7 @@ def test_parsing():
     cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
     source = {"name": "Mock Feed", "url": "http://mock"}
 
-    with patch("feedparser.parse", return_value=feedparser.parse(MOCK_FEED)):
+    with patch("feedparser.parse", return_value=feedparser.parse(_make_mock_feed())):
         items = fetch.fetch_source(source, cutoff)
 
     assert len(items) == 2, f"Expected 2 recent items, got {len(items)}"

@@ -30,8 +30,9 @@ def test_feedback_roundtrip():
         # Write mock brief
         (briefs_dir / "2026-02-18.json").write_text(json.dumps(SAMPLE_BRIEF))
 
-        with patch.object(rate, "BRIEFS_DIR", briefs_dir), \
-             patch.object(rate, "FEEDBACK_PATH", feedback_path):
+        import data_loader
+        with patch.object(data_loader, "BRIEFS_DIR", briefs_dir), \
+             patch.object(data_loader, "FEEDBACK_PATH", feedback_path):
 
             # Load brief
             brief = rate.load_brief("2026-02-18")

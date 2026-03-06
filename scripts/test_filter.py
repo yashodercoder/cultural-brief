@@ -74,7 +74,7 @@ def test_full_pipeline():
     mock_client.messages.create.return_value = make_mock_response(MOCK_HAIKU_RESPONSE)
 
     with patch("filter.anthropic.Anthropic", return_value=mock_client), \
-         patch.dict("os.environ", {"ANTHROPIC_API_KEY": "test-key"}):
+         patch.dict("os.environ", {"ANTHROPIC_API_KEY": "sk-ant-test-key-for-unit-testing-only"}):
 
         selections = f.call_haiku("dummy prompt")
         id_to_item = {item["id"]: item for item in MOCK_ITEMS}
