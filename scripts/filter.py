@@ -97,7 +97,13 @@ IMPORTANT:
 - MAXIMIZE SOURCE DIVERSITY: Select items from as many different sources as possible (ideally {brief_size} different sources, minimum {min_diversity})
 - Avoid selecting multiple items from the same source unless absolutely necessary
 - Use the EXACT item id shown (e.g., "9f75a8fe94a9", not an index number)
-- Write a one-line hook (15–25 words) for each, explaining why it's worth reading
+- Write a one-line hook (15–25 words) for each. The hook is a sharp, specific reason to read it — written like a recommendation from a smart friend, not a summary or abstract. It should make the reader feel something or want to click immediately. Be concrete and direct. Do not describe what the piece is about in general terms. Do not use words like: pivotal, underscore, foster, highlight, explore, delve, crucial, vibrant, tapestry, testament, landscape, intricate, showcase, or resonate.
+
+BAD hook: "A deeply personal essay on masking autism and its physical toll—complex interiority meets embodied experience."
+GOOD hook: "She spent years performing normalcy so convincingly her body finally gave out. This is what that costs."
+
+BAD hook: "Paris Review explores how style becomes tyranny in writing—literary criticism that reveals craft obsession."
+GOOD hook: "On the writers whose sentences are so controlled they've stopped meaning anything. A trap disguised as ambition."
 
 Return ONLY a JSON array with exactly {brief_size} items, no other text:
 [

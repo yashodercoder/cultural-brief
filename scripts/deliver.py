@@ -110,7 +110,7 @@ def format_html(brief: list[dict], date_label: str, weekly_footer: str = "", tod
     """
     from urllib.parse import quote
 
-    # Color Palette - Soft pastels rotating per item
+    # Color palette
     PASTEL_COLORS = ['#fff5f5', '#f0f9ff', '#fffbeb', '#f0fdf4', '#faf5ff', '#fef3f2', '#ecfeff']
     SECONDARY_TEXT = "#64748b"
     TITLE_TEXT = "#1e293b"
@@ -124,12 +124,10 @@ def format_html(brief: list[dict], date_label: str, weekly_footer: str = "", tod
         tracked_url = add_tracking(item['link'], item['id'])
         formatted_title = format_title(item['title'])
 
-        # Escape HTML entities to prevent injection and formatting issues
         safe_source = html.escape(item['source'])
         safe_title = html.escape(formatted_title)
         safe_hook = html.escape(item['hook'])
 
-        # Build one-click rating links
         rating_links = ""
         if today:
             base_url = f"{RATING_SERVER_URL}/rate"
@@ -137,7 +135,7 @@ def format_html(brief: list[dict], date_label: str, weekly_footer: str = "", tod
             url_encoded_title = quote(item['title'])
             url_encoded_link = quote(item['link'])
 
-            up_url = f"{base_url}?item_id={item['id']}&rating=up&date={today}&source={url_encoded_source}&title={url_encoded_title}&url={url_encoded_link}"
+            up_url   = f"{base_url}?item_id={item['id']}&rating=up&date={today}&source={url_encoded_source}&title={url_encoded_title}&url={url_encoded_link}"
             down_url = f"{base_url}?item_id={item['id']}&rating=down&date={today}&source={url_encoded_source}&title={url_encoded_title}&url={url_encoded_link}"
             save_url = f"{base_url}?item_id={item['id']}&rating=save&date={today}&source={url_encoded_source}&title={url_encoded_title}&url={url_encoded_link}"
 
@@ -168,7 +166,6 @@ def format_html(brief: list[dict], date_label: str, weekly_footer: str = "", tod
           </td>
         </tr>"""
 
-    # Add weekly footer if provided
     if weekly_footer:
         items_html += f"""
         <tr>
@@ -189,7 +186,7 @@ def format_html(brief: list[dict], date_label: str, weekly_footer: str = "", tod
         <tr>
           <td style="padding-bottom:24px;border-bottom:1px solid {DIVIDER};margin-bottom:32px;">
             <div style="font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px;">
-              Cultural Brief
+              Cassandra
             </div>
             <div style="font-size:28px;font-weight:700;color:#0f172a;">
               {date_label}
