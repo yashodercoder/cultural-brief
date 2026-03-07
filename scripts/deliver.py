@@ -118,6 +118,12 @@ def format_html(brief: list[dict], date_label: str, weekly_footer: str = "", tod
     PAGE_BG = "#fafafa"
     DIVIDER = "#e5e5e5"
 
+    TYPE_ICONS = {
+        "books": "📖", "film": "🎬", "music": "🎵", "tv": "📺",
+        "art": "🖼️", "interview": "💬", "poetry": "🌿", "ideas": "🧠",
+        "games": "🎮", "food": "🍴", "theatre": "🎭",
+    }
+
     items_html = ""
     for i, item in enumerate(brief):
         bg_color = PASTEL_COLORS[i % len(PASTEL_COLORS)]
@@ -146,19 +152,22 @@ def format_html(brief: list[dict], date_label: str, weekly_footer: str = "", tod
               <a href="{save_url}" style="text-decoration:none;">🔖</a>
             </div>"""
 
+        icon = TYPE_ICONS.get(item.get("type", ""), "")
+        icon_prefix = f"{icon}&nbsp;&nbsp;" if icon else ""
+
         items_html += f"""
         <tr>
           <td style="padding:0 0 8px 0;">
             <div style="background:{bg_color};padding:24px;">
               <div style="font-size:11px;color:{SECONDARY_TEXT};text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;">
-                {safe_source}
+                {icon_prefix}{safe_source}
               </div>
-              <div style="margin-bottom:12px;">
+              <div style="margin-bottom:16px;">
                 <a href="{tracked_url}" style="font-size:19px;font-weight:600;color:{TITLE_TEXT};text-decoration:none;line-height:1.4;display:block;">
                   {safe_title}
                 </a>
               </div>
-              <div style="font-size:16px;color:{BODY_TEXT};line-height:1.7;">
+              <div style="font-size:16px;color:{BODY_TEXT};line-height:1.85;padding-top:14px;border-top:1px solid rgba(0,0,0,0.07);">
                 {safe_hook}
               </div>
               {rating_links}

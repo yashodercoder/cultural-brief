@@ -105,13 +105,15 @@ GOOD hook: "She spent years performing normalcy so convincingly her body finally
 BAD hook: "Paris Review explores how style becomes tyranny in writing—literary criticism that reveals craft obsession."
 GOOD hook: "On the writers whose sentences are so controlled they've stopped meaning anything. A trap disguised as ambition."
 
+- Assign a "type" to each item. Pick exactly one from this list: books, film, music, tv, art, interview, poetry, ideas, games, food, theatre
+
 Return ONLY a JSON array with exactly {brief_size} items, no other text:
 [
-  {{"id": "<exact item id from list>", "hook": "<one-line hook>"}},
-  {{"id": "<exact item id from list>", "hook": "<one-line hook>"}},
-  {{"id": "<exact item id from list>", "hook": "<one-line hook>"}},
-  {{"id": "<exact item id from list>", "hook": "<one-line hook>"}},
-  {{"id": "<exact item id from list>", "hook": "<one-line hook>"}}
+  {{"id": "<exact item id from list>", "hook": "<one-line hook>", "type": "<type>"}},
+  {{"id": "<exact item id from list>", "hook": "<one-line hook>", "type": "<type>"}},
+  {{"id": "<exact item id from list>", "hook": "<one-line hook>", "type": "<type>"}},
+  {{"id": "<exact item id from list>", "hook": "<one-line hook>", "type": "<type>"}},
+  {{"id": "<exact item id from list>", "hook": "<one-line hook>", "type": "<type>"}}
 ]
 
 Items:
@@ -226,7 +228,7 @@ def main():
             print(f"  Warning: unknown id {item_id!r} — skipping")
             continue
 
-        brief.append({**item, "hook": sel["hook"]})
+        brief.append({**item, "hook": sel["hook"], "type": sel.get("type", "")})
         seen_ids.add(item_id)
 
     # Validate we have the expected number of items
