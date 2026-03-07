@@ -1,11 +1,13 @@
 """
-deliver.py — Format today's brief and send via Resend.
-Reads data/briefs/YYYY-MM-DD.json, sends a plain + HTML email.
+deliver.py — Format today's brief and send via Resend (email) and Textbelt (SMS).
+Reads data/briefs/YYYY-MM-DD.json, sends a plain + HTML email and an SMS.
 
 Required env vars:
-  RESEND_API_KEY  — from resend.com
-  BRIEF_FROM      — verified sender address, e.g. brief@yourdomain.com (optional, defaults to onboarding@resend.dev)
-  BRIEF_TO        — recipient address
+  RESEND_API_KEY      — from resend.com
+  BRIEF_FROM          — verified sender address, e.g. brief@yourdomain.com (optional, defaults to onboarding@resend.dev)
+  BRIEF_TO            — recipient email address
+  TEXTBELT_API_KEY    — from textbelt.com
+  YASHODA_PHONE       — recipient phone number (e.g. +14155551234)
 """
 
 import html
@@ -282,6 +284,35 @@ def send(subject: str, plain: str, html: str) -> None:
             sys.exit(f"❌ Unexpected error sending email: {e}")
 
 
+def format_sms(brief: list[dict], date_label: str) -> str:
+    lines = [f"Cassandra / {date_label}\n"]
+    for i, item in enumerate(brief, 1):
+        lines.append(f"{i}. {item['title']} — {item['source']}")
+        lines.append(item["hook"])
+        lines.append(item["link"])
+        lines.append("")
+    return "\n".join(lines).strip()
+
+
+def send_sms(text: str) -> None:
+    api_key = os.environ.get("TEXTBELT_API_KEY")
+    phone = os.environ.get("YASHODA_PHONE")
+    if not api_key or not phone:
+        print("⚠️  SMS skipped — TEXTBELT_API_KEY or YASHODA_PHONE not set")
+        return
+
+    client = get_http_client()
+    resp = client.post(
+        "https://textbelt.com/text",
+        data={"phone": phone, "message": text, "key": api_key},
+    )
+    result = resp.json()
+    if result.get("success"):
+        print(f"📱 SMS sent → {phone}")
+    else:
+        print(f"⚠️  SMS failed: {result.get('error', 'unknown error')}")
+
+
 def is_monday() -> bool:
     """Check if today is Monday."""
     return datetime.now(timezone.utc).weekday() == 0
@@ -321,6 +352,7 @@ def main():
 
     print(plain)  # preview in CI logs
     send(subject=f"Cultural Brief — {date_label}", plain=plain, html=html)
+    send_sms(format_sms(brief, date_label))
 
 
 if __name__ == "__main__":
