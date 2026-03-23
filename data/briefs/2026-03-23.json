@@ -1,0 +1,32 @@
+[
+  {
+    "id": "a26c3bbbdb78",
+    "source": "The Guardian Books",
+    "title": "\u2018I want my career, my children and a free supple life\u2019: Sylvia Plath\u2019s radical reinvention",
+    "link": "https://www.theguardian.com/books/2026/mar/22/i-want-my-career-my-children-and-a-free-supple-life-sylvia-plaths-radical-reinvention",
+    "description": "<p>Too often framed as a tragic icon or a victim of domesticity, the poet remade herself and her work at the start of the 60s, as a new collection will show</p><p>In February 1962, Sylvia Plath dropped in on her neighbour in Devon, Rose Key, with \u201ca plate of absolutely indigestible Black Walnut-flavored cupcakes\u201d. She had made them from a Betty Crocker mix palmed off on her by the bank manager\u2019s wife. Not wanting to waste it nor feed it to her own family (she was scornful of both processed food ",
+    "published": "2026-03-22T12:00:20+00:00",
+    "hook": "Sylvia Plath didn't just survive domesticity\u2014she systematically dismantled her old self to become a different kind of artist entirely.",
+    "type": "books"
+  },
+  {
+    "id": "7a9a262aceb4",
+    "source": "The New Yorker",
+    "title": "The Vegetalian Is New York\u2019s Finest Sandwich",
+    "link": "https://www.newyorker.com/culture/the-food-scene/-the-vegetalian-is-new-yorks-finest-sandwich",
+    "description": "The best Italian combo in the city contains no meat whatsoever.",
+    "published": "2026-03-22T10:00:00+00:00",
+    "hook": "A New Yorker food writer makes the case for why the city's best Italian sandwich contains zero meat and all ambition.",
+    "type": "food"
+  },
+  {
+    "id": "93f3395176e9",
+    "source": "Little White Lies",
+    "title": "Fallen Star: In Praise of The Man Who Fell To Earth",
+    "link": "https://lwlies.com/in-praise-of/fallen-star-in-praise-of-the-man-who-fell-to-earth",
+    "description": "<p><p>Nicolas Roeg's space oddity has only become more relevant in our age of all-consuming media and unbridled corporate greed.</p></p>",
+    "published": "2026-03-23T00:00:00+00:00",
+    "hook": "Nicolas Roeg's alien-as-capitalist prophecy feels less like science fiction and more like a warning that already came true.",
+    "type": "film"
+  }
+]
